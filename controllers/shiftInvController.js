@@ -24,7 +24,15 @@ const addPersoonShifts = (req, res) => {
   res.json({ message: "Ok" });
 };
 
+const delPersoonShift = (req, res) => {
+  db.run("delete from shiftinvulling where id = ?", [req.params.ID], (err) => {
+    if (err) return res.json({ message: err.message });
+    res.json({ bericht: "OK" });
+  });
+};
+
 module.exports = {
   addPersoonShifts,
   getPersonenByShift,
+  delPersoonShift,
 };
