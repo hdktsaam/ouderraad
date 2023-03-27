@@ -10,7 +10,7 @@ const getEvenementen = (req, res) => {
 const addEvenement = (req, res) => {
   db.run("insert into evenement (naam) values (?)", [req.body.titel], (err) => {
     if (err) return res.json({ message: err.message });
-    res.json({ data: Ok });
+    res.json({ data: "Ok" });
   });
 };
 
@@ -20,7 +20,7 @@ const updateEvenement = (req, res) => {
     [req.body.titel, req.body.id],
     (err) => {
       if (err) return res.json({ message: err.message });
-      res.json({ data: Ok });
+      res.json({ data: "Ok" });
     }
   );
 };
