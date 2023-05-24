@@ -2,7 +2,7 @@ const db = require("../database");
 
 const getshiftsByEvent = (req, res) => {
   db.all(
-    "select * from shift where id_evenement = ? order by volgorde",
+    "select * from shift where id_evenement = ?",
     [req.params.ID],
     (err, rows) => {
       if (err) return res.json({ message: err.message });

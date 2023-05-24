@@ -8,11 +8,13 @@ create table shift (
     id integer primary key,
     id_evenement integer not null,
     volgorde integer not null,
-    titel tet not null,
+    titel text not null,
     omschrijving text not null,
     minAantal integer default 1 not null, 
     Foreign key (id_evenement) References evenement(id)
 );
+
+
 
 create table shiftInvulling (
     id integer primary key,

@@ -14,6 +14,13 @@ const addEvenement = (req, res) => {
   });
 };
 
+const deleteEventement = (req, res) => {
+  db.run("delete from evenement where id > 1", [], (err) => {
+    if (err) return res.json({ message: err.message });
+    res.json({ data: "ok" });
+  });
+};
+
 const updateEvenement = (req, res) => {
   db.run(
     "update evenement set naam = ? where id = ?",

@@ -2,6 +2,7 @@ const express = require("express");
 const evenement = require("./routes/evenement");
 const shifts = require("./routes/shifts");
 const shiftInvulling = require("./routes/shiftInvulling");
+const films = require("./routes/films");
 
 const app = express();
 
@@ -20,6 +21,7 @@ app.use(function (req, res, next) {
 app.use("/api/evenement", evenement);
 app.use("/api/shift", shifts);
 app.use("/api/shiftInvulling", shiftInvulling);
+app.use("/api/films", films);
 
 app.listen(4000, () => {
   console.log("connected op poort 4000");
